@@ -66,6 +66,7 @@ public static class Program
                 var point = new Point(state.X, state.Y);
                 window
                     .SetSize(state.Width, state.Height)
+                    .SetUseOsDefaultLocation(false)
                     .SetLocation(point);
                 if (state.Maximized)
                     window.SetMaximized(true);
