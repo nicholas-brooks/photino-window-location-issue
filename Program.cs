@@ -20,17 +20,14 @@ public static class Program
             .RegisterLocationChangedHandler(HandleLocationChangedDelegate)
             .RegisterSizeChangedHandler(HandleSizeChangedDelegate)
             .RegisterWindowClosingHandler(HandleWindowClosingDelegate)
-            .SetUseOsDefaultSize(false);
-            //.SetResizable(true);
-            //.SetMinSize(400, 400);
+            .SetUseOsDefaultSize(false)
+            .SetResizable(true);
 
         RestoreState(mainWindow);
         
         Console.WriteLine($"Restored location: {mainWindow.Location.X}, {mainWindow.Location.Y}");
 
         mainWindow
-            // .SetSize(600, 400)
-            // .SetLocation(new Point(600, 600))
             .Load("wwwroot/index.html")
             .WaitForClose();
 
